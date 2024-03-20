@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd or Even</title>
+    <link rel="stylesheet" href="lt123.css">
+</head>
+<body>
+    <h1 style="padding-bottom: 7%;">Is it Odd or Even?</h1>
+    <div class="box">
+        <h3 id="results"></h3>
+    </div>
+    <script>
+        function processNumbers() {
+            let numbers = prompt("Please enter 25 integers, separated by commas").split(',').map(Number);
+            let sum = 0;
+            let results = [];
+            for (let i = 0; i < numbers.length; i++) {
+                sum += numbers[i];
+                let type = numbers[i] % 2 === 0 ? 'even' : 'odd';
+                results.push('Number ' + numbers[i] + ' is ' + type);
+            }//signature oliver in
+            let sumType = sum % 2 === 0 ? 'even' : 'odd';
+            results.push('<br>' + 'The sum of all numbers is ' + sum + ',<br>' + "which is " + sumType);
+            document.getElementById('results').innerHTML = results.join('<br>');
+        }
+        processNumbers(); //syempre its olivier
+    </script>
+</body>
+</html>

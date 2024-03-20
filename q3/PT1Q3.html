@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="lt123.css">
+    <style>
+        #bod {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 0fr 1fr;
+        }
+        .box {
+            margin-left: 10%;
+        }
+    </style>
+</head>
+<body id="bod">
+    <div>
+        <div class="box" id="box">
+            <h2 id="h">The eyes are open</h2>
+            <img src="open.jpg" id="eyeImage" style="margin-left: 20%;">
+        </div>
+        <button type="button" onclick="toggleEyes()" id="toggleEyesButton">Toggle eyes</button>
+    </div>
+    <div></div>
+    <div>
+        <div class="box" id="box1">
+            <h2 id="m">The mouth is closed</h2>
+            <img src="cover1 (1).jpg"  id="nga" style="margin-left: 20%; width: 350px;">
+        </div>
+        <button type="button" onclick="toggleMouth()" id="toggleMouthButton">Toggle mouth</button>
+    </div>
+<script>
+    var clickCount = 0;
+
+    function toggleEyes() {
+        clickCount++;
+
+        if (clickCount % 2 === 0) {
+            document.getElementById("eyeImage").src = "close.jpg";
+            document.getElementById("h").innerHTML = "The eyes are closed";
+        } else {
+            document.getElementById("eyeImage").src = "open.jpg";
+            document.getElementById("h").innerHTML = "The eyes are open";
+        }
+
+        if (clickCount % 12 === 0) {
+            document.body.style.backgroundColor = "black";
+            document.getElementById("box").style.backgroundColor = "black";
+            document.getElementById("box").style.borderColor = "black";
+            document.getElementById("box").style.borderStyle = "solid";
+            document.getElementById("eyeImage").style.marginLeft = "0";
+            document.getElementById("eyeImage").style.marginTop = "10%";
+            document.getElementById("eyeImage").style.width = "500px";
+            document.getElementById("eyeImage").src = "carreon.jpeg";
+            document.getElementById("h").innerHTML = "The eyes are closed, but not mine";
+            document.getElementById("box1").style.backgroundColor = "black";
+            document.getElementById("box1").style.borderColor = "black";
+            document.getElementById("box1").style.borderStyle = "solid";
+            document.getElementById("nga").style.marginLeft = "0";
+            document.getElementById("nga").style.marginTop = "10%";
+            document.getElementById("nga").style.width = "500px";
+            document.getElementById("nga").src = "carreon.jpeg";
+            document.getElementById("m").innerHTML = "The mouth is closed, but not mine";
+        } else {
+            document.getElementById("box").style.backgroundColor = "#fff ";
+            document.getElementById("box").style.borderColor = "#ddd";
+            document.getElementById("box").style.borderStyle = "outset";
+            document.getElementById("eyeImage").style.marginLeft = "20%";
+            document.getElementById("eyeImage").style.marginTop = "0";
+            document.getElementById("eyeImage").style.width = "auto";
+            document.getElementById("box1").style.backgroundColor = "#fff ";
+            document.getElementById("box1").style.borderColor = "#ddd";
+            document.getElementById("box1").style.borderStyle = "outset";
+            document.getElementById("nga").style.marginLeft = "20%";
+            document.getElementById("nga").style.marginTop = "0";
+            document.getElementById("nga").style.width = "350px";
+        }
+    }
+
+    function toggleMouth() {
+        clickCount++;
+
+        if (clickCount % 2 === 0) {
+            document.getElementById("nga").src = "cover1 (2).jpg";
+            document.getElementById("nga").style.width = "350px";
+            document.getElementById("m").innerHTML = "The mouth is open";
+        } else {
+            document.getElementById("nga").src = "cover1 (1).jpg";
+            document.getElementById("nga").style.width = "350px";
+            document.getElementById("m").innerHTML = "The mouth is closed";
+        }
+        if (clickCount % 12 === 0) {
+            document.body.style.backgroundColor = "black";
+            document.getElementById("box").style.backgroundColor = "black";
+            document.getElementById("box").style.borderColor = "black";
+            document.getElementById("box").style.borderStyle = "solid";
+            document.getElementById("eyeImage").style.marginLeft = "0";
+            document.getElementById("eyeImage").style.marginTop = "10%";
+            document.getElementById("eyeImage").style.width = "500px";
+            document.getElementById("eyeImage").src = "carreon.jpeg";
+            document.getElementById("h").innerHTML = "The eyes are closed, but not mine";
+            document.getElementById("box1").style.backgroundColor = "black";
+            document.getElementById("box1").style.borderColor = "black";
+            document.getElementById("box1").style.borderStyle = "solid";
+            document.getElementById("nga").style.marginLeft = "0";
+            document.getElementById("nga").style.marginTop = "10%";
+            document.getElementById("nga").style.width = "500px";
+            document.getElementById("nga").src = "carreon.jpeg";
+            document.getElementById("m").innerHTML = "The mouth is closed, but not mine";
+        } else {
+            document.getElementById("box").style.backgroundColor = "#fff ";
+            document.getElementById("box").style.borderColor = "#ddd";
+            document.getElementById("box").style.borderStyle = "outset";
+            document.getElementById("eyeImage").style.marginLeft = "20%";
+            document.getElementById("eyeImage").style.marginTop = "0";
+            document.getElementById("eyeImage").style.width = "auto";
+            document.getElementById("box1").style.backgroundColor = "#fff ";
+            document.getElementById("box1").style.borderColor = "#ddd";
+            document.getElementById("box1").style.borderStyle = "outset";
+            document.getElementById("nga").style.marginLeft = "20%";
+            document.getElementById("nga").style.marginTop = "0";
+            document.getElementById("nga").style.width = "350px";
+        }
+    }
+    function reset() {
+            document.getElementById("bod").style.backgroundColor = "rgba(255, 0, 55, 0.705)";
+            document.getElementById("box").style.backgroundColor = "#fff ";
+            document.getElementById("box").style.borderColor = "#ddd";
+            document.getElementById("box").style.borderStyle = "outset";
+            document.getElementById("eyeImage").style.marginLeft = "20%";
+            document.getElementById("eyeImage").style.marginTop = "0";
+            document.getElementById("eyeImage").style.width = "auto";
+            document.getElementById("box1").style.backgroundColor = "#fff ";
+            document.getElementById("box1").style.borderColor = "#ddd";
+            document.getElementById("box1").style.borderStyle = "outset";
+            document.getElementById("nga").style.marginLeft = "20%";
+            document.getElementById("nga").style.marginTop = "0";
+            document.getElementById("nga").style.width = "350px";
+            document.getElementById("nga").src = "cover1 (1).jpg";
+            document.getElementById("nga").style.width = "350px";
+            document.getElementById("m").innerHTML = "The mouth is closed";
+            document.getElementById("eyeImage").src = "open.jpg";
+            document.getElementById("h").innerHTML = "The eyes are open";
+    }
+</script>
+<div></div>
+<div><button type="button" onclick="reset()" id="reset">Reset</button></div>
+</body>
+</html>
