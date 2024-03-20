@@ -24,15 +24,34 @@ body::after {
 }
 
 .box {
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.8);
     border: 5px solid #fff;
-    border-radius: 10px;
+    border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    width: 90%;
     max-width: 800px;
+    margin: auto;
     transition: transform 0.3s ease-in-out;
+}
+
+.left-side, .right-side {
+    flex: 1; /* Assign flex-grow to both sides */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-side {
+    border-right: 2px solid #ccc; /* Added border for the vertical line */
+    padding-right: 20px;
+}
+
+.right-side {
+    padding-left: 20px;
 }
 
 h1 {
