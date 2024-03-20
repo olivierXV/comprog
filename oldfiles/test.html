@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="navbar.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: black;
+    }
+    a {
+       text-decoration: none;
+    }
+            h1{
+                font-size: 250%;
+                font-weight: bolder;
+            }
+            p{
+                font-size: 125%;
+            }
+
+    .container {
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 600px) {
+      /* Desktop styles */
+      .container {
+        display: flex;
+        align-items: center;
+      }
+
+      .image {
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+
+.content.reverse {
+  order: -1; /* Reverses the order on desktop */
+}
+    }
+.body{
+  background-color:khaki;
+  border: 2px solid black;
+  padding: 20px;
+  padding-bottom: -50%;
+  margin: 20px;
+  color: black;
+}
+		.section {
+            height: max-content;
+			background-image: url(sea.jpg);
+            background-size: cover;
+			color: white;
+			margin: 10px 5px;
+		}
+        .three {
+            background-image: linear-gradient(darkred, black);
+        }
+        .one {
+            background-image: linear-gradient(black,midnightblue);
+        }
+            .hover{
+                display: inline-block;
+                position: relative;
+                color: white;
+            }
+            .hover:after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 5px;
+                bottom: 0;
+                left: 0;
+                background-color: white;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+            .hover:hover:after{
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+            .hover-text{
+                font-size: 250%;
+                transition: font-size 0.3s ease;
+            }
+            .hover-text:hover{
+                font-size: 500%;
+            }
+            span.hover-text{
+                font-size: 120%;
+                transition: font-size 0.3s ease;
+            }
+            span.hover-text:hover{
+                font-size: 200%;
+            }
+            /*The following are for the CSS Border*/
+.dotted {border-style: dotted;}
+.dashed {border-style: dashed;}
+.solid {border-style: solid;}
+.double {border-style: double;}
+.groove {border-style: groove;}
+.ridge {border-style: ridge;}
+.inset {border-style: inset;}
+.outset {border-style: outset;}
+.none {border-style: none;}
+.hidden {border-style: hidden;}
+.mix {border-style: dotted dashed solid double;}
+  </style>
+</head>
+<body>
+    <div class="row">
+    <ul style="background-color:black;">
+        <li><a class="active solid">VBN</a></li>
+        <li><a class="active inset">News</a></li>
+        <li><a class="outset" href="PT2Q2.html">Sports</a></li>
+        <li style="float: right;"><a class="active inset" style="float: right;">Adrian Oliver Hernandez</a></li>
+    </ul>
+    </div>
+    <div class="section one">
+        <section style="padding: 5%;">
+            <h1 class="hover-text" style="padding-bottom: 5%;">
+                <a href="https://news.abs-cbn.com/news/11/23/23/ph-asserting-rights-in-joint-patrols-with-us-official" style="color: white;">
+                    Philippines asserting rights in joint patrols with US forces, says official
+                </a>
+            </h1>
+<div class="container" style="margin-top: -5%;">
+    <a href="https://news.abs-cbn.com/news/11/23/23/ph-asserting-rights-in-joint-patrols-with-us-official" style="color: white;">
+        <img src="joint.jpg">
+</a>
+    <div class="content">
+      <div class="body">
+            <p>
+                MANILA — The Philippine military on Thursday said <span class="hover-text">the country was asserting its sovereign rights</span> through joint maritime and air patrols with US troops in the West Philippine Sea, in the face of China's growing assertiveness in the region.
+                <br><br>
+                The 3-day patrols which began on Tuesday would allow the longtime treaty allies to learn each other's maneuvers and ensure interoperability, Armed Forces of the Philippines (AFP) spokesperson Col. Medel Aguilar said. 
+                <br><br>
+                "Ito ay ang pag-assert natin ng sovereign rights sa ating maritime zone at the same time, pag-promote ng international convention in support of rules-based international order," Aguilar said in a public briefing. 
+            </p>
+                Job Manahan, ABS-CBN News
+      </div>
+      </div>
+    </div></section>
+</div>
+<div class="section two">
+    <Section style="padding: 5%;">
+        <div class="container">
+        <div class="body">
+            <p>
+                The joint patrols came weeks after the latest Chinese incursions in the Philippines’ exclusive economic zone and attempts to block resupply missions to BRP Sierra Madre in the West Philippine Sea.
+                <br><br>
+                Aguilar said it was important for China to adhere to the United Nations Convention on the Law of the Sea (UNCLOS). 
+                <br><br>
+                <span class="hover-text" style="font-weight: bolder;">"China cannot claim sovereignty over these maritime features, over [these] maritime shoals because the law says, UNCLOS [says], it belongs to the EEZ of the Philippines and therefore, whatever they are doing there is illegal and against the law of nature,"</span> he said. 
+            </p>
+            Job Manahan, ABS-CBN News
+        </div>
+        <div class="content">
+        <img src="wps.jpg">
+        </div>
+        </div>
+    </Section>
+</div>
+<div class="section three">
+    <Section style="padding: 5%;">
+        <div class="body">
+            <p>
+                The US and the Philippines agreed in February to resume joint patrols in the disputed South China Sea, which Beijing claims almost entirely, including parts of the West Philippine Sea. 
+                <br><br>
+                The longtime treaty allies had suspended maritime patrols in the hotly contested area under the rule of former president Rodrigo Duterte, who favored Beijing over Washington. 
+                <br><br>
+                President Ferdinand Marcos Jr., who has sought to repair relations with the US since taking office in 2022, earlier said the patrols "aim to enhance regional security and foster a seamless partnership with the United States in safeguarding our shared interests."
+                <br><br>
+                Marcos warned Sunday that the Chinese military had "started to show interest" in building bases on reefs that were "closer and closer to the Philippine coastline".
+                <br><br>
+                Beijing deploys boats to patrol the waterway and has built artificial islands that it has militarized to reinforce its claims to almost the entire South China Sea.
+                <br><br>
+                China has ignored an international tribunal ruling that its claims have no legal basis.
+            </p>
+            Job Manahan, ABS-CBN News
+        </div>
+    </Section>
+</div>
+<!--OlivierXV-->
+</body>
+</html>

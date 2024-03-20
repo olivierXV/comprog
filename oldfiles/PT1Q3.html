@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="lt123.css">
+</head>
+<body id="bod" style="align-items: center;">
+<div class="box" id="box">
+    <h2 id="h">The eyes are open</h2>
+    <img src="open.jpg" id="eyeImage" style="margin-left: 20%;">
+</div>
+<script>
+    var clickCount = 0;
+
+    function toggleEyes() {
+        clickCount++;
+
+        if (clickCount % 2 === 0) {
+            document.getElementById("eyeImage").src = "close.jpg";
+            document.getElementById("h").innerHTML = "The eyes are closed";
+        } else {
+            document.getElementById("eyeImage").src = "open.jpg";
+            document.getElementById("h").innerHTML = "The eyes are open";
+        }
+    }
+</script>
+<button type="button" onclick="toggleEyes()" id="i">Toggle eyes</button>
+</body>
+</html>

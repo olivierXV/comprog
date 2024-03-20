@@ -1,0 +1,37 @@
+/*OlivierXV*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+position: fixed;
+top: 0;
+width: 100%;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: Helvetica, sans-serif;
+    font-size: larger;
+}
+li a:hover:not(.active) {
+    color: black;
+    background-color:darkcyan;
+    transition: font-size 0.3s ease;
+}
+li a.active {
+    color: white;
+    background-color:darkblue;
+    font-weight: bolder;
+    font-family: Helvetica, sans-serif;
+    float: right;
+}
+/*OlivierXV*/

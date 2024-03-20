@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<title>Personal Website</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			width: 98.5vw;
+			height: 100vh;
+            background-color: black;
+		}
+		
+		.section {
+			width: 98vw;
+            height: max-content;
+			background-image: linear-gradient(crimson,#EF5354);
+			font-size: 50px;
+			color: white;
+			margin: 10px 5px;
+		}
+        .four {
+            background-image: linear-gradient(#EF5354,crimson);
+        }
+        .three {
+            background-image: linear-gradient(#EF5354,crimson,#EF5354);
+        }
+        .five {
+            background-image: linear-gradient(crimson,black);
+        }
+        .one {
+            background-image: linear-gradient(black,crimson);
+        }
+            h2, h3, h6{
+                font-family: Helvetica, sans-serif;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+            }
+            li {
+                float: left;
+            }
+            li a {
+                display: block;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-weight: bolder;
+                font-family: Helvetica, sans-serif;
+            }
+            li a:hover:not(.active) {
+                background-color: black;
+            }
+            li a.active {
+                color: white;
+                background-color: #aa0404;
+                font-weight: bolder;
+                font-family: Helvetica, sans-serif;
+                float: right;
+            }
+            .container{
+                display: grid;
+                align-items: center; 
+                grid-template-columns: 1fr 2fr 0fr;
+                column-gap: 5px;
+                margin-right: 5%;
+                margin-left: 5%;
+            }
+            img {
+                border-radius: 5%;
+                max-width: 100%;
+                max-height:100%;
+                float: left;
+                margin-top: 5%;
+            }
+            .text {
+                font-size: 20px;
+            }
+            h1{
+                font-size: 400%;
+                font-weight: bolder;
+                font-family: Helvetica, sans-serif;
+                margin-top: 10%;
+                margin-bottom: 5;
+            }
+            p{
+                font-family: Helvetica, sans-serif;
+                margin-bottom: 5%;
+            }
+    .container1 {
+        display: grid;
+      align-items: center;
+     }
+	</style>
+</head>
+<body>
+    <div class="row">
+    <ul style="background-color: black;">
+        <li><a class="active" href="https://ngl.link/olivier.avh">Adrian Oliver Hernandez</a></li>
+        <li><a href="#section1">About Me</a></li>
+        <li><a href="#section2">Family Tree</a></li>
+        <li><a href="#section3">Social Links</a></li>
+        <li><a href="#section4">Achievements</a></li>
+        <li><a href="#section5">Hobbies</a></li>
+
+        <li><a href="https://sites.google.com/view/portfoliohernandez11c/home">Portfolio</a></li>
+    </ul>
+    </div>
+	<div class="section one" id="section1">
+        <div class="container">
+            <div class="image">
+                <img src="plaza.jpg" width="300" height="auto">
+            </div>
+            <div class="text"><br><br>  
+                <h1 style="margin-bottom: 5%;">About Me</h1>
+                <h2 style="font-family: Helvetica, sans-serif; font-weight: bold; font-size: 200%; margin-bottom: 5%;">Adrian Oliver Verzosa Hernandez<br>ICT 11-C</h2>
+                <p style="margin-bottom: 20%;">I was born on August 5, 2007 in Ospital ng Makati, to Marites Verzosa and Oliver Hernandez (estranged), who were in a relationship at the time. I grew up here in Bacoor but I started school in Taguig, I studied elementary at Beleveau Academy and graduated with honors. For the first two years of Junior High School, I studied in Benedictine School of Cavite which closed in 2021, then I transferred to Eastern Bacoor National High School where I graduated from Grade 10 last year.<br><br>My hometown is Lingayen, Pangasinan, where my mother was born.</p>
+            </div>
+        </div>
+	</div>
+	<div class="section two" id="section2">
+        <div class="container1">
+          <h3 style="text-align: center; margin-top: 5%;">Verzosa Family Tree</h3>
+          <img src="tree.JPG" style="width:90%; height:auto; margin-left: 5%; margin-bottom: 5%;">
+        </div>
+	</div>
+	<div class="section three" id="section3">
+        <div class="container1" style="margin-left: 20%;">
+                            <br><br>
+            <h3 style="text-align: center; margin-left: -25%; margin-bottom: 5%;margin-top:-5%;">Social Media Links</h3>
+            <div class="image">
+                <a href="https://www.facebook.com/adrianski.x"><img src="fb.png" width="200" height="200" style="margin-left: 5%;"></a>
+                <a href="https://www.instagram.com/olivier.avh"><img src="ig.png" width="200" height="200" style="margin-left: 5%;"></a>
+                <a href="https://spotify.link/EhFUvJSMrDb"><img src="spot.png" width="200" height="200" style="margin-left: 5%;"></a>
+                                <br><br><br><br><br><br><br>
+            </div>
+            <br>
+            </div>  
+	</div>
+	<div class="section four" id="section4">
+        <div class="container1">
+          <img src="alcala.jpeg" style="margin-bottom: 2%; width: 80%; height: auto; margin-left: 10%;">
+          <h6 style="margin-bottom: 5%; text-align: center; font-size:4vw;">Grade 10 - Angel Alcala<br>EBNHS Cheerdance Competition<br>1st Runner Up</h6>
+        </div>
+	</div>
+	<div class="section five" id="section5">
+        <div class="container1">
+          <h3 style="text-align:center; margin-top:5%; margin-bottom: 5%;">Hobbies</h3>
+          <p style="font-size:50%; margin-left: 5%; line-height: 1.5;">I like spending my time playing with WW2 strategy games like Hearts of Iron IV.<br>I like to also play with older operating systems like Windows XP on a Virtual Machine.<br>I create game-based fictional stories but mostly from my Minecraft world "VIVAT XARPEIA".<br>I also do create and maintain some html documents that is mostly built from my boredom.<br>I take French lessons in duolingo almost everyday, je suis, magnifique.<br>I like to spend time alone without talking to anyone.<br>I like walking to the beach.<br>I like to take pictures of views like the sunset, or the beach, and also other things.</p>
+        </div>
+	</div>
+</body>
+</html>

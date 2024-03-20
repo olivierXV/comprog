@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Objects</title>
+  <link rel="stylesheet" href="lt123.css">
+</head>
+<body>
+  <h2>JavaScript Objects</h2>
+  <div class="box">
+    <h3>About Me</h3>
+    <p id="demo"></p>
+  </div>
+  <div class="box">
+    <h3>Phone</h3>
+    <p id="bra"></p>
+    <p id="pino"></p>
+    <p id="spec"></p>
+  </div>
+  <div class="box">
+    <h3>Laptop</h3>
+    <p id="lana"></p>
+  </div>
+
+  <script>
+    // Create an object:
+    const person = {
+      firstName: "Adrian Oliver",
+      lastName: "Hernandez",
+      age: 16,
+      eyeColor: "Dark brown",
+      hairColor: "Golden brown with black",
+      faveColor: "Blue Green",
+    };
+    const phone = {
+      comp: "Xiaomi",
+      brand: "Redmi",
+      series: "Note",
+      model: "12s",
+      color: "Ocean Blue",
+      cpu: "Helio G96",
+      ram: "8 GB RAM",
+      storage: "256 GB Internal Memory",
+    };
+    const lappy = {
+      brand: "Acer",
+      model: "Aspire 3",
+      os: "Pop_OS! with Windows 11 (Dual Boot)",
+      cpu: "AMD Athlon Silver 3050u",
+      gra: "Integrated Graphics",
+      ram: "8GB DDR4 RAM",
+    };
+    let bra = phone.comp;
+    let pino = phone.brand + " " + phone.series + " " + phone.model;
+    let spec = phone.cpu + "<br>" + phone.ram + "<br>" + phone.storage;
+    let lana = lappy.brand + " " + lappy.model + "<br>" + lappy.cpu + "<br>" + lappy.gra + "<br>" + lappy.ram + "<br>" + lappy.os;
+    // Display some data from the object:
+    document.getElementById("bra").innerHTML = bra;
+    document.getElementById("demo").innerHTML = "My name is " + person.firstName + " " + person.lastName + "<br>" + "I am " + person.age + " years old. " + "<br>" + "My eye color is " + person.eyeColor + "<br>" + "My hair color is " + person.hairColor + "<br>" + "My fave color is " + person.faveColor;
+    document.getElementById("pino").innerHTML = pino;
+    document.getElementById("spec").innerHTML = spec;
+    document.getElementById("lana").innerHTML = lana;
+  </script>
+</body>
+</html>

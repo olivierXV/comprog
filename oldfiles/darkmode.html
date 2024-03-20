@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning Activity 6</title>
+        <link rel="icon" type="image/x-icon" href="logo.png">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                width: 98.5vw;
+                height: 100vh;
+                background-color: black;
+            }
+            
+            .section {
+                width: 98vw;
+                height: max-content;
+                background-image: linear-gradient(crimson,#EF5354);
+                font-size: 50px;
+                color: white;
+                margin: 10px 5px;
+            }
+            .four {
+                background-image: linear-gradient(#EF5354,crimson);
+            }
+            .three {
+                background-image: linear-gradient(#EF5354,crimson,#EF5354);
+            }
+            .five {
+                background-image: linear-gradient(crimson,black);
+            }
+            .one {
+                background-image: linear-gradient(black,crimson);
+            }
+                h2, h3, h6{
+                    font-family: Helvetica, sans-serif;
+                }
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: black;
+      position: fixed;
+      top: 0;
+      width: 100%;
+                }
+                li {
+                    float: left;
+                }
+                li a {
+                    display: block;
+                    color: rgb(255, 255, 255);
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-weight: bolder;
+                    font-family: Helvetica, sans-serif;
+                }
+                li a:hover:not(.active) {
+                    background-color: black;
+                }
+                li a.active {
+                    color: white;
+                    background-color: #aa0404;
+                    font-weight: bolder;
+                    font-family: Helvetica, sans-serif;
+                    float: right;
+                }
+                .container{
+                    display: grid;
+                    align-items: center; 
+                    grid-template-columns: 1fr 2fr 0fr;
+                    column-gap: 5px;
+                    margin-right: 5%;
+                    margin-left: 5%;
+                }
+                img {
+                    border-radius: 5%;
+                    max-width: 100%;
+                    max-height:100%;
+                    float: left;
+                    margin-top: 5%;
+                }
+                .text {
+                    font-size: 20px;
+                }
+                h1{
+                    font-size: 400%;
+                    font-weight: bolder;
+                    font-family: Helvetica, sans-serif;
+                    margin-top: 10%;
+                    margin-bottom: 5;
+                }
+                p{
+                    font-family: Helvetica, sans-serif;
+                    margin-bottom: 5%;
+                }
+        .container1 {
+            display: grid;
+          align-items: center;
+         }
+        </style>
+    </head>
+    <body id="katawan" style="background-image: linear-gradient(crimson,#EF5354); font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: black;">
+        <div class="container">
+            <div class="image">
+                <img src="plaza.jpg" width="300" height="auto">
+            </div>
+            <div class="text"><br><br>  
+                <h1 style="margin-bottom: 5%;">About Me</h1>
+                <h2 style="font-family: Helvetica, sans-serif; font-weight: bold; font-size: 200%; margin-bottom: 5%;">Adrian Oliver Verzosa Hernandez<br>ICT 11-C</h2>
+                <p>I was born on August 5, 2007 in Ospital ng Makati, to Marites Verzosa and Oliver Hernandez (estranged), who were in a relationship at the time. I grew up here in Bacoor but I started school in Taguig, I studied elementary at Beleveau Academy and graduated with honors. For the first two years of Junior High School, I studied in Benedictine School of Cavite which closed in 2021, then I transferred to Eastern Bacoor National High School where I graduated from Grade 10 last year.<br><br>My hometown is Lingayen, Pangasinan, where my mother was born.</p>
+            </div>
+        </div>
+        <button type="button" onclick="myfunction()">Reveal</button>
+        <script>
+            var clickCount = 0;
+            function myfunction() {
+              if ( clickCount % 2 == 0 ) {
+                document.getElementById("accla").innerHTML = "Angel Alcala!";
+                document.getElementById("katawan").style.backgroundColor = "#1D2025";
+                document.getElementById("katawan").style.color = "white";
+            } else {
+                document.getElementById("accla").innerHTML = "My section last year";
+                document.getElementById("katawan").style.backgroundColor = "salmon";
+                document.getElementById("katawan").style.color = "black";
+              }
+              clickCount++
+            }
+        </script>
+        </center>
+    </body>
+</html>

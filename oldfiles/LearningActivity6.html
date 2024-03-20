@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning Activity 6</title>
+        <link rel="icon" type="image/x-icon" href="logo.png">
+    </head>
+    <body id="katawan" style="background-color: salmon; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <h3 style="font-family: Arial, Helvetica, sans-serif;"><address>Adrian Oliver V. Hernandez<br>ICT 11-C 2023-2024<br>Computer Programming </address></h3>
+        <img src="/Personal Site/alcala.jpeg" style="width: 50%; height:auto">
+        <h1 id="accla">My section last year</h1>
+        <button type="button" onclick="myfunction()">Reveal</button>
+        <script>
+            var clickCount = 0;
+            function myfunction() {
+              if ( clickCount % 2 == 0 ) {
+                document.getElementById("accla").innerHTML = "Angel Alcala!";
+                document.getElementById("katawan").style.backgroundColor = "lightseagreen";
+            } else {
+                document.getElementById("accla").innerHTML = "My section last year";
+                document.getElementById("katawan").style.backgroundColor = "salmon";
+              }
+              clickCount++
+            }
+            </script>
+    </body>
+</html>
