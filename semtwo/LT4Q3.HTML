@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<link rel="stylesheet" href="cssq3.css">
+<title>Grade Calculator</title>
+<script>
+function calculateGrade() {
+    var studentNumber = document.getElementById('studentNumber').value;
+    var studentName = document.getElementById('studentName').value;
+    var quiz = parseFloat(document.getElementById('quiz').value) * 5; // Convert to percentage
+    var recitation = parseFloat(document.getElementById('recitation').value) * 10; // Convert to percentage
+    var longTest = parseFloat(document.getElementById('longTest').value) * 5; // Convert to percentage
+    var project = parseFloat(document.getElementById('project').value) * 5; // Convert to percentage
+    var attendance = parseFloat(document.getElementById('attendance').value) * 10; // Convert to percentage
+    var exam = parseFloat(document.getElementById('exam').value) * 5; // Convert to percentage
+
+    // Validate input values
+    if (isNaN(quiz) || quiz < 0 || quiz > 100 ||
+        isNaN(recitation) || recitation < 0 || recitation > 100 ||
+        isNaN(longTest) || longTest < 0 || longTest > 100 ||
+        isNaN(project) || project < 0 || project > 100 ||
+        isNaN(attendance) || attendance < 0 || attendance > 100 ||
+        isNaN(exam) || exam < 0 || exam > 100) {
+        alert("Please enter valid scores within the specified ranges.");
+        return;
+    }
+
+    var totalPercentage = quiz + recitation + longTest + project + attendance + exam;
+    var totalGrade = totalPercentage / 6; // Calculate the average to get the total grade
+
+    // Hide the form and display the result
+    document.getElementById('gradeForm').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('result').innerHTML =
+        '1st Semester Grade for ' + studentName + ' (' + studentNumber + '):<br>' +
+        'Quiz = ' + quiz.toFixed(2) + '%<br>' +
+        'Recitation = ' + recitation.toFixed(2) + '%<br>' +
+        'Long Test = ' + longTest.toFixed(2) + '%<br>' +
+        'Project = ' + project.toFixed(2) + '%<br>' +
+        'Attendance = ' + attendance.toFixed(2) + '%<br>' +
+        'Exam = ' + exam.toFixed(2) + '%<br>' +
+        'Total Grade = ' + totalGrade.toFixed(2) + '%';
+}
+</script>
+</head>
+<body>
+<div class="box">
+<h2>1st Semester Grade Calculator</h2>
+
+<div id="gradeForm">
+    <label for="studentNumber">Enter Student Number:</label>
+    <input type="text" id="studentNumber" name="studentNumber"><br><br>
+
+    <label for="studentName">Enter Student Name:</label>
+    <input type="text" id="studentName" name="studentName"><br><br>
+
+    <label for="quiz">Quiz (0-20):</label>
+    <input type="number" id="quiz" name="quiz" min="0" max="20"><br><br>
+
+    <label for="recitation">Recitation (0-10):</label>
+    <input type="number" id="recitation" name="recitation" min="0" max="10"><br><br>
+
+    <label for="longTest">Long Test (0-20):</label>
+    <input type="number" id="longTest" name="longTest" min="0" max="20"><br><br>
+
+    <label for="project">Project (0-20):</label>
+    <input type="number" id="project" name="project" min="0" max="20"><br><br>
+
+    <label for="attendance">Attendance (0-10):</label>
+    <input type="number" id="attendance" name="attendance" min="0" max="10"><br><br>
+
+    <label for="exam">Exam (0-20):</label>
+    <input type="number" id="exam" name="exam" min="0" max="20"><br><br>
+
+    <button onclick="calculateGrade()">Calculate Grade</button>
+</div>
+
+<div id="result" style="display:none;"></div>
+</div>
+</body>
+</html>

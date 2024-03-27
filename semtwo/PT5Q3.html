@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csign.css">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="box">
+        <div class="left-side">
+            <h1>Testing</h1>
+            <p>Performance Task 5</p>
+        </div>
+        <div class="right-side">
+            <div>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname"><br>
+                <label>Sex:</label>
+                <div>
+                    <input type="radio" id="male" name="sex">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="sex">
+                    <label for="female">Female</label>
+                </div><br>
+                <label>Mode of Transportation:</label>
+                <div>
+                    <input type="checkbox" id="personal" name="trans">
+                    <label for="personal">Personal Vehicle</label>
+                    <input type="checkbox" id="service" name="trans">
+                    <label for="service">Service</label>
+                    <input type="checkbox" id="commute" name="trans">
+                    <label for="commute">Commute</label>
+                </div><br>
+                <label>Write something...</label>
+                <textarea rows="5" cols="50" id="rando"></textarea>
+                <button onclick="calculateGrade()" type="submit">Next</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculateGrade() {
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var sexElements = document.getElementsByName('sex');
+            var sexSelected = false;
+            var rando = document.getElementById('rando').value;
+
+            for(var i = 0; i < sexElements.length; i++) {
+                if(sexElements[i].checked) {
+                    sexSelected = true;
+                    break;
+                }
+            }
+
+            if (fname === "" || lname === "" || !sexSelected) {
+                alert("Please fill in all the fields.");
+                return false; // Prevent form submission
+            } else {
+                window.location = 'PT3Q3.html';
+            }
+            if (rando === "Give me a french song") {
+                window.location = 'https://youtu.be/Uusmv3Q8Cno?si=ddUh2qp0OPK0TQbr';
+            }
+            if (rando === "Grade calculator") {
+                window.location = 'LT4Q3.html';
+            }
+            if (rando === "Odd or even") {
+                window.location = 'PT2Q3.html';
+            }
+        }
+    </script>
+</body>
+</html>
