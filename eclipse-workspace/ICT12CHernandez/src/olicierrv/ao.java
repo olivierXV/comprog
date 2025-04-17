@@ -1,0 +1,105 @@
+package olicierrv;
+
+public class ao {
+	
+	/*
+	 * This file contains ALL ANSI Escape Codes that I use for my codes
+	 * Do not modify this file or it will cause errors in multiple codes
+	 * YOU HAVE BEEN WARNED // olicierrv //
+	 */
+	
+    // Reset
+    public static final String RST = "\033[0m";  // Reset
+
+    // Regular Colors
+    public static final String BK = "\033[0;30m";   // Black
+    public static final String R = "\033[0;31m";    // Red
+    public static final String G = "\033[0;32m";    // Green
+    public static final String Y = "\033[0;33m";    // Yellow
+    public static final String B = "\033[0;34m";    // Blue
+    public static final String P = "\033[0;35m";    // Purple
+    public static final String C = "\033[0;36m";    // Cyan
+    public static final String W = "\033[0;37m";    // White
+
+    // Bold
+    public static final String BKB = "\033[1;30m";  // Black Bold
+    public static final String RB = "\033[1;31m";   // Red Bold
+    public static final String GB = "\033[1;32m";   // Green Bold
+    public static final String YB = "\033[1;33m";   // Yellow Bold
+    public static final String BB = "\033[1;34m";   // Blue Bold
+    public static final String PB = "\033[1;35m";   // Purple Bold
+    public static final String CB = "\033[1;36m";   // Cyan Bold
+    public static final String WB = "\033[1;37m";   // White Bold
+
+    // Underline
+    public static final String BKU = "\033[4;30m";  // Black Underlined
+    public static final String RU = "\033[4;31m";   // Red Underlined
+    public static final String GU = "\033[4;32m";   // Green Underlined
+    public static final String YU = "\033[4;33m";   // Yellow Underlined
+    public static final String BU = "\033[4;34m";   // Blue Underlined
+    public static final String PU = "\033[4;35m";   // Purple Underlined
+    public static final String CU = "\033[4;36m";   // Cyan Underlined
+    public static final String WU = "\033[4;37m";   // White Underlined
+
+    // Background
+    public static final String BKG = "\033[40m";    // Black Background
+    public static final String RG = "\033[41m";     // Red Background
+    public static final String GG = "\033[42m";     // Green Background
+    public static final String YG = "\033[43m";     // Yellow Background
+    public static final String BG = "\033[44m";     // Blue Background
+    public static final String PG = "\033[45m";     // Purple Background
+    public static final String CG = "\033[46m";     // Cyan Background
+    public static final String WG = "\033[47m";     // White Background
+
+    // High Intensity
+    public static final String BKHI = "\033[0;90m";   // Black High Intensity
+    public static final String RHI = "\033[0;91m";    // Red High Intensity
+    public static final String GHI = "\033[0;92m";    // Green High Intensity
+    public static final String YHI = "\033[0;93m";    // Yellow High Intensity
+    public static final String BHI = "\033[0;94m";    // Blue High Intensity
+    public static final String PHI = "\033[0;95m";    // Purple High Intensity
+    public static final String CHI = "\033[0;96m";    // Cyan High Intensity
+    public static final String WHI = "\033[0;97m";    // White High Intensity
+
+    // Bold High Intensity
+    public static final String BKBHI = "\033[1;90m";  // Black Bold High Intensity
+    public static final String RBHI = "\033[1;91m";   // Red Bold High Intensity
+    public static final String GBHI = "\033[1;92m";   // Green Bold High Intensity
+    public static final String YBHI = "\033[1;93m";   // Yellow Bold High Intensity
+    public static final String BBHI = "\033[1;94m";   // Blue Bold High Intensity
+    public static final String PBHI = "\033[1;95m";   // Purple Bold High Intensity
+    public static final String CBHI = "\033[1;96m";   // Cyan Bold High Intensity
+    public static final String WBHI = "\033[1;97m";   // White Bold High Intensity
+
+    // High Intensity Backgrounds
+    public static final String BKGHI = "\033[0;100m"; // Black High Intensity Background
+    public static final String RBGHI = "\033[0;101m"; // Red High Intensity Background
+    public static final String GBGHI = "\033[0;102m"; // Green High Intensity Background
+    public static final String YBGHI = "\033[0;103m"; // Yellow High Intensity Background
+    public static final String BBGHI = "\033[0;104m"; // Blue High Intensity Background
+    public static final String PBGHI = "\033[0;105m"; // Purple High Intensity Background
+    public static final String CBGHI = "\033[0;106m"; // Cyan High Intensity Background
+    public static final String WBGHI = "\033[0;107m"; // White High Intensity Background
+
+    public static final void a() {
+    	System.out.println(YG+BKB+"Made by olicierrv <3"+RST);
+    }
+
+    public static final void q() {
+    	System.out.println(RG+WB+"Made by olicierrv and quipp3r <3"+RST);
+    }
+
+    public static void clearConsole() {
+        for (int i = 0; i < 20; i++) {
+            System.out.println();
+        }
+    }
+    
+    public static String capitalize(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        return input.substring(0, 1).toUpperCase() + input.substring(1);
+    }
+    
+}

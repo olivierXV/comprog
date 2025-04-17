@@ -1,0 +1,136 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.Label;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Login extends JFrame {
+	
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JPasswordField passwordField;
+	private JTextField textField;
+	private JButton btnCLR;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {	
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login frame = new Login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Login() {
+		String authUname = ao.authUname;
+		String authPass = ao.authPass;
+		setBackground(new Color(36, 36, 36));
+		setTitle("Welcome");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 350);
+		contentPane = new JPanel();
+		contentPane.setForeground(new Color(51, 51, 51));
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblUsername.setForeground(new Color(255, 255, 255));
+		lblUsername.setBounds(100, 42, 111, 19);
+		contentPane.add(lblUsername);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblPassword.setForeground(Color.WHITE);
+		lblPassword.setBounds(100, 120, 111, 19);
+		contentPane.add(lblPassword);
+		
+		textField = new JTextField();
+		textField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				passwordField.requestFocusInWindow();
+			}
+		});
+		
+				JButton btnLogIn = new JButton("Log in");
+				btnLogIn.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String uname = textField.getText();
+						String passw = passwordField.getText();
+							if (uname.equals("olicier")&&passw.equals("xarpeius")) {
+								MainMenu.main(null);
+								dispose();
+							} else {
+								JOptionPane.showMessageDialog(null, "Credentials incorrect.");
+							}
+					}
+				});
+				btnLogIn.setForeground(new Color(255, 255, 255));
+				btnLogIn.setBackground(new Color(36, 36, 36));
+				btnLogIn.setFont(new Font("Cantarell", Font.PLAIN, 18));
+				btnLogIn.setBounds(100, 229, 93, 37);
+				contentPane.add(btnLogIn);
+		textField.setBackground(new Color(36, 36, 36));
+		textField.setForeground(new Color(255, 255, 255));
+		textField.setBounds(100, 73, 255, 35);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		btnCLR = new JButton("Clear");
+		btnCLR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+				passwordField.setText(null);
+			}
+		});
+		
+		passwordField = new JPasswordField();
+		passwordField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnLogIn.doClick();
+			}
+		});
+		passwordField.setForeground(new Color(255, 255, 255));
+		passwordField.setBackground(new Color(36, 36, 36));
+		passwordField.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		passwordField.setToolTipText("Password");
+		passwordField.setBounds(100, 151, 255, 35);
+		contentPane.add(passwordField);
+		btnCLR.setForeground(Color.WHITE);
+		btnCLR.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnCLR.setBackground(new Color(36, 36, 36));
+		btnCLR.setBounds(262, 230, 93, 37);
+		contentPane.add(btnCLR);
+		
+	}
+}

@@ -1,0 +1,72 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Label;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+
+public class Login extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login frame = new Login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Login() {
+		setBackground(new Color(36, 36, 36));
+		setTitle("Welcome");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setForeground(new Color(51, 51, 51));
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		passwordField = new JPasswordField();
+		passwordField.setToolTipText("Password");
+		passwordField.setBounds(99, 210, 255, 35);
+		contentPane.add(passwordField);
+		
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBounds(99, 132, 255, 35);
+		contentPane.add(textArea_1);
+		
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setForeground(new Color(255, 255, 255));
+		lblUsername.setBounds(99, 101, 111, 19);
+		contentPane.add(lblUsername);
+		
+		JLabel lblUsername_1 = new JLabel("Password");
+		lblUsername_1.setForeground(Color.WHITE);
+		lblUsername_1.setBounds(99, 179, 111, 19);
+		contentPane.add(lblUsername_1);
+	}
+}

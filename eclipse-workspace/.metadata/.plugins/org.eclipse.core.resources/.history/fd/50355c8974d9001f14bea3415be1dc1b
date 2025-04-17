@@ -1,0 +1,110 @@
+package olicierrv;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+public class Test extends JFrame {
+
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JTextField tuname;
+    private JTextField tusect;
+
+    public static void main(String[] args) {
+
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    Test frame = new Test();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the frame.
+     */
+    public Test() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 450, 300);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        JLabel name = new JLabel("Enter your name:");
+        name.setFont(new Font("Cantarell", Font.PLAIN, 20));
+        name.setBounds(50, 48, 152, 19);
+        contentPane.add(name);
+
+        tuname = new JTextField();
+        tuname.setBounds(224, 48, 170, 23);
+        contentPane.add(tuname);
+        tuname.setColumns(10);
+
+        JLabel section = new JLabel("Enter your section:");
+        section.setFont(new Font("Cantarell", Font.PLAIN, 20));
+        section.setBounds(50, 86, 180, 19);
+        contentPane.add(section);
+
+        tusect = new JTextField();
+        tusect.setColumns(10);
+        tusect.setBounds(224, 86, 170, 23);
+        contentPane.add(tusect);
+
+        JLabel welcome = new JLabel("");
+        welcome.setHorizontalAlignment(SwingConstants.CENTER);
+        welcome.setFont(new Font("Cantarell", Font.PLAIN, 20));
+        welcome.setBounds(50, 133, 344, 19);
+        contentPane.add(welcome);
+
+        JButton submt = new JButton("Submit");
+        submt.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String name = tuname.getText();
+                String sect = tusect.getText();
+                welcome.setText("Hello " + name + " of section " + sect);
+            }
+        });
+        submt.setFont(new Font("Cantarell", Font.BOLD, 14));
+        submt.setBounds(100, 178, 101, 27);
+        contentPane.add(submt);
+
+        JButton btnClear = new JButton("Clear");
+        btnClear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                tuname.setText("");
+                tusect.setText("");
+                welcome.setText("");
+            }
+        });
+        btnClear.setFont(new Font("Cantarell", Font.BOLD, 14));
+        btnClear.setBounds(249, 178, 101, 27);
+        contentPane.add(btnClear);
+        
+        JButton btnMainMenu = new JButton("Main Menu");
+        btnMainMenu.setForeground(new Color(36, 36, 36));
+        btnMainMenu.setFont(new Font("Cantarell", Font.BOLD, 18));
+        btnMainMenu.setBackground(new Color(36, 36, 36));
+        btnMainMenu.setBounds(170, 227, 115, 37);
+        contentPane.add(btnMainMenu);
+    }
+}

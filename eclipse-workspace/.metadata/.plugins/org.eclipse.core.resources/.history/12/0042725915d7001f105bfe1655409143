@@ -1,0 +1,98 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JComboBox;
+import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+
+public class fah2cel extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txtEnterTemperature;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					fah2cel frame = new fah2cel();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public fah2cel() {
+		setBackground(new Color(36, 36, 36));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(new Color(255, 255, 255));
+		comboBox.setBackground(new Color(36, 36, 36));
+		comboBox.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Fahrenheit to Celsius", "Celsius to Fahrenheit"}));
+		comboBox.setBounds(90, 40, 275, 45);
+		contentPane.add(comboBox);
+		
+		txtEnterTemperature = new JTextField();
+		txtEnterTemperature.setToolTipText("");
+		txtEnterTemperature.setBackground(new Color(36, 36, 36));
+		txtEnterTemperature.setForeground(new Color(255, 255, 255));
+		txtEnterTemperature.setColumns(10);
+		txtEnterTemperature.setBounds(90, 120, 152, 45);
+		contentPane.add(txtEnterTemperature);
+		
+		JLabel lblresult = new JLabel("Result:");
+		lblresult.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		lblresult.setForeground(new Color(255, 255, 255));
+		lblresult.setBounds(90, 177, 152, 50);
+		contentPane.add(lblresult);
+		
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {		
+				String contempt = (String) comboBox.getSelectedItem();
+				double convert, temp = Double.parseDouble(txtEnterTemperature.getText());
+                DecimalFormat df = new DecimalFormat("0.00");
+				if (contempt.equals("Celsius to Fahrenheit")) {
+					convert = (temp * 1.8) + 32;
+					lblresult.setText("Result: "+df.format(convert)+"°F");	
+				} else {
+					convert = (temp - 32)/1.8;
+					lblresult.setText("Result: "+df.format(convert)+"°C");					
+				}
+			}
+		});
+		btnSubmit.setToolTipText("");
+		btnSubmit.setForeground(new Color(255, 255, 255));
+		btnSubmit.setBackground(new Color(36, 36, 36));
+		btnSubmit.setBounds(272, 120, 93, 45);
+		contentPane.add(btnSubmit);
+	}
+}

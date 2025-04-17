@@ -1,0 +1,112 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Label;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+
+public class MainMenu extends JFrame {
+	
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JButton btnClear;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainMenu frame = new MainMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainMenu() {
+		setBackground(new Color(36, 36, 36));
+		setTitle("Welcome");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 350);
+		contentPane = new JPanel();
+		contentPane.setForeground(new Color(51, 51, 51));
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblUsername.setForeground(new Color(255, 255, 255));
+		lblUsername.setBounds(100, 42, 111, 19);
+		contentPane.add(lblUsername);
+		
+		JButton btnLogIn = new JButton("Log in");
+		btnLogIn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnLogIn.setForeground(new Color(255, 255, 255));
+		btnLogIn.setBackground(new Color(36, 36, 36));
+		btnLogIn.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnLogIn.setBounds(105, 230, 93, 37);
+		contentPane.add(btnLogIn);
+		
+		btnClear = new JButton("Clear");
+		btnClear.setForeground(Color.WHITE);
+		btnClear.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnClear.setBackground(new Color(36, 36, 36));
+		btnClear.setBounds(257, 230, 93, 37);
+		contentPane.add(btnClear);
+		
+		JButton btnEnterInfo = new JButton("<html><center>Enter your<br>info</center></html>");
+		btnEnterInfo.setForeground(new Color(36, 36, 36));
+		btnEnterInfo.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnEnterInfo.setBackground(new Color(36, 36, 36));
+		btnEnterInfo.setBounds(73, 73, 125, 55);
+		contentPane.add(btnEnterInfo);
+		
+		JButton btngradesys = new JButton("Log in");
+		btngradesys.setForeground(Color.WHITE);
+		btngradesys.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btngradesys.setBackground(new Color(36, 36, 36));
+		btngradesys.setBounds(73, 151, 125, 55);
+		contentPane.add(btngradesys);
+		
+		JButton btnlegalAgechecker = new JButton("<html><center>Legal Age<br>Checker</center></html>");
+		btnlegalAgechecker.setForeground(new Color(36, 36, 36));
+		btnlegalAgechecker.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnlegalAgechecker.setBackground(new Color(36, 36, 36));
+		btnlegalAgechecker.setBounds(257, 72, 125, 55);
+		contentPane.add(btnlegalAgechecker);
+		
+		JButton btnLogIn_1_1_1 = new JButton("Log in");
+		btnLogIn_1_1_1.setForeground(Color.WHITE);
+		btnLogIn_1_1_1.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnLogIn_1_1_1.setBackground(new Color(36, 36, 36));
+		btnLogIn_1_1_1.setBounds(257, 151, 125, 55);
+		contentPane.add(btnLogIn_1_1_1);
+		
+	}
+}

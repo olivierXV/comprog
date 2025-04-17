@@ -1,0 +1,170 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+
+public class LegalAgeChecker extends JFrame {
+
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JTextField txtname;
+    private JTextField txtage;
+
+    public static void main(String[] args) {
+
+    	EventQueue.invokeLater(new Runnable() {
+    	public void run() {
+                try {
+                    LegalAgeChecker frame = new LegalAgeChecker();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the frame.
+     */
+    public LegalAgeChecker() {
+    	setUndecorated(true);
+    	setTitle("Legal Age Checker");
+    	setBackground(new Color(36, 36, 36));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 450, 290);
+        contentPane = new JPanel();
+        contentPane.setBackground(new Color(36, 36, 36));
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
+
+        JLabel lblname = new JLabel("Enter your name:");
+        lblname.setForeground(new Color(255, 255, 255));
+        lblname.setFont(new Font("Cantarell", Font.PLAIN, 20));
+        lblname.setBounds(50, 26, 152, 35);
+        contentPane.add(lblname);
+
+        txtname = new JTextField();
+        txtname.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				txtage.requestFocusInWindow();
+			}
+        });
+        txtname.setBounds(224, 26, 170, 35);
+        contentPane.add(txtname);
+        txtname.setColumns(10);
+
+        JLabel lblage = new JLabel("Enter your age:");
+        lblage.setForeground(new Color(255, 255, 255));
+        lblage.setFont(new Font("Cantarell", Font.PLAIN, 20));
+        lblage.setBounds(50, 76, 180, 35);
+        contentPane.add(lblage);
+
+        txtage = new JTextField();
+        txtage.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnSubmit.doClick();
+			}
+        });
+        txtage.setColumns(10);
+        txtage.setBounds(224, 76, 170, 35);
+        contentPane.add(txtage);
+        
+                JButton btnSubmit = new JButton("Submit");
+                btnSubmit.setBackground(new Color(36, 36, 36));
+                btnSubmit.setForeground(new Color(255, 255, 255));
+                btnSubmit.addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    	int age = Integer.parseInt(txtage.getText());
+                    	String name = txtname.getText();
+                    	String legal;
+		        if (btnSubmit.getText().equals("Cancel")) {
+		            // If in clear confirmation mode, cancel the clearing process
+		            lblcheck.setText("Clearing canceled.");
+		            btnSubmit.setText("Generate");
+		        } else {
+                            /*
+                             * This watermark should not be removed.
+                             * TODO, made by olici3rrv
+                             */
+		            // Normal generate functionality
+		            if (age >= 18) {
+		            	legal = "of legal age";
+		            } else {
+		            	legal = "not of legal age";
+		            }
+	                lblcheck.setText("Hi " + name + ", you are "+ legal);
+		        }
+                    }
+                });
+                btnSubmit.setFont(new Font("Cantarell", Font.BOLD, 14));
+                btnSubmit.setBounds(101, 185, 101, 27);
+                contentPane.add(btnSubmit);
+
+        JLabel lblcheck = new JLabel("");
+        lblcheck.setForeground(new Color(255, 255, 255));
+        lblcheck.setHorizontalAlignment(SwingConstants.CENTER);
+        lblcheck.setFont(new Font("Cantarell", Font.PLAIN, 20));
+        lblcheck.setBounds(50, 131, 344, 35);
+        contentPane.add(lblcheck);
+
+        JButton btnClear = new JButton("Clear");
+        btnClear.setBackground(new Color(36, 36, 36));
+        btnClear.setForeground(new Color(255, 255, 255));
+        btnClear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+		        if (btnSubmit.getText().equals("Submit")) {
+		            lblcheck.setText("Click Clear again to confirm.");
+		            btnSubmit.setText("Cancel");
+		        } else {//2nd click to confirm
+                    /*
+                     * This watermark should not be removed.
+                     * TODO, made by olici3rrv
+                     */
+		        	txtage.setText(null);
+		        	txtname.setText(null);
+		        	lblcheck.setText(null);
+                    /*
+                     * This watermark should not be removed.
+                     * TODO, made by olici3rrv
+                     */
+		        }
+            }
+        });
+        btnClear.setFont(new Font("Cantarell", Font.BOLD, 14));
+        btnClear.setBounds(249, 184, 101, 27);
+        contentPane.add(btnClear);
+
+		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int exit = JOptionPane.showConfirmDialog(null, "Return to main menu?", "Confirm", JOptionPane.YES_NO_OPTION);
+				if (exit == JOptionPane.YES_OPTION) {
+					dispose();
+					MainMenu.main(null);
+				}
+			}
+		});
+		btnMainMenu.setForeground(Color.WHITE);
+		btnMainMenu.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnMainMenu.setBackground(new Color(36, 36, 36));
+		btnMainMenu.setBounds(160, 224, 135, 37);
+		contentPane.add(btnMainMenu);
+    }
+}

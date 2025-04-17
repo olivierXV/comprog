@@ -1,0 +1,270 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+
+public class GradingSystem extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txtWI;
+	private JTextField txtPRDV;
+	private JTextField txtEAPP;
+	private JTextField txtCPAR;
+	private JTextField txtIII;
+	private JTextField txtCMPRG;
+	private JTextField txtPE;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GradingSystem frame = new GradingSystem();
+					frame.setVisible(true);
+					ao.a();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+                /*
+                 * This watermark should not be removed.
+                 * TODO, made by olici3rrv
+                 */
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public GradingSystem() {
+		setBackground(new Color(36, 36, 36));
+		setTitle("Grading System");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 400, 550);
+		contentPane = new JPanel();
+		contentPane.setForeground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblCMPRG = new JLabel("ComProg");
+		lblCMPRG.setForeground(new Color(255, 255, 255));
+		lblCMPRG.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblCMPRG.setBounds(35, 25, 70, 30);
+		contentPane.add(lblCMPRG);
+		
+		JLabel lblIII = new JLabel("III");
+		lblIII.setForeground(new Color(255, 255, 255));
+		lblIII.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblIII.setBounds(35, 67, 133, 30);
+		contentPane.add(lblIII);
+		
+		JLabel lblWI = new JLabel("WorkImmersion");
+		lblWI.setForeground(new Color(255, 255, 255));
+		lblWI.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblWI.setBounds(35, 109, 114, 30);
+		contentPane.add(lblWI);
+		
+		JLabel lblPD = new JLabel("PerDev");
+		lblPD.setForeground(new Color(255, 255, 255));
+		lblPD.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblPD.setBounds(35, 151, 70, 30);
+		contentPane.add(lblPD);
+		
+		JLabel lblEAPP = new JLabel("EAPP");
+		lblEAPP.setForeground(new Color(255, 255, 255));
+		lblEAPP.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblEAPP.setBounds(35, 193, 70, 30);
+		contentPane.add(lblEAPP);
+		
+		JLabel lblCPR = new JLabel("CPAR");
+		lblCPR.setForeground(new Color(255, 255, 255));
+		lblCPR.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblCPR.setBounds(35, 235, 70, 30);
+		contentPane.add(lblCPR);
+		
+		JLabel lblPE = new JLabel("PE");
+		lblPE.setForeground(new Color(255, 255, 255));
+		lblPE.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblPE.setBounds(35, 277, 70, 30);
+		contentPane.add(lblPE);
+		
+		txtCMPRG = new JTextField();
+		txtCMPRG.setColumns(10);
+		txtCMPRG.setBounds(182, 26, 185, 30);
+		contentPane.add(txtCMPRG);
+		
+		txtIII = new JTextField();
+		txtIII.setColumns(10);
+		txtIII.setBounds(182, 68, 185, 30);
+		contentPane.add(txtIII);
+		
+		txtWI = new JTextField();
+		txtWI.setBounds(182, 110, 185, 30);
+		contentPane.add(txtWI);
+		txtWI.setColumns(10);
+		
+		txtPRDV = new JTextField();
+		txtPRDV.setColumns(10);
+		txtPRDV.setBounds(182, 152, 185, 30);
+		contentPane.add(txtPRDV);
+		
+		txtEAPP = new JTextField();
+		txtEAPP.setColumns(10);
+		txtEAPP.setBounds(182, 194, 185, 30);
+		contentPane.add(txtEAPP);
+		
+		txtCPAR = new JTextField();
+		txtCPAR.setColumns(10);
+		txtCPAR.setBounds(182, 236, 185, 30);
+		contentPane.add(txtCPAR);
+		
+		txtPE = new JTextField();
+		txtPE.setColumns(10);
+		txtPE.setBounds(182, 278, 185, 30);
+		contentPane.add(txtPE);
+		
+		JLabel lblGWA = new JLabel("Your average is: ");
+		lblGWA.setForeground(new Color(255, 255, 255));
+		lblGWA.setFont(new Font("Cantarell", Font.BOLD, 18));
+		lblGWA.setBounds(35, 319, 332, 45);
+		contentPane.add(lblGWA);
+		
+		JLabel lblGWA_1 = new JLabel("");
+		lblGWA_1.setForeground(Color.WHITE);
+		lblGWA_1.setFont(new Font("Cantarell", Font.BOLD, 18));
+		lblGWA_1.setBounds(35, 366, 332, 45);
+		contentPane.add(lblGWA_1);
+		
+		JLabel watermark = new JLabel(ao.ao);
+		watermark.setHorizontalAlignment(SwingConstants.TRAILING);
+		watermark.setForeground(new Color(94, 92, 100));
+		watermark.setFont(new Font("Cantarell", Font.BOLD | Font.ITALIC, 14));
+		watermark.setBounds(35, 319, 332, 45);
+		contentPane.add(watermark);
+		
+		JButton btnGenerate = new JButton("Generate");
+		btnGenerate.setForeground(new Color(255, 255, 255));
+		btnGenerate.setBackground(new Color(36, 36, 36));
+		btnGenerate.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        if (btnGenerate.getText().equals("Cancel")) {
+		            // If in clear confirmation mode, cancel the clearing process
+		            lblGWA.setText("Clearing canceled.");
+		            btnGenerate.setText("Generate");
+		        } else {
+                    /*
+                     * This watermark should not be removed.
+                     * TODO, made by olici3rrv
+                     */
+		            // Normal generate functionality
+		            if (txtCMPRG.getText().isEmpty() || txtWI.getText().isEmpty() || txtIII.getText().isEmpty() || 
+		                txtPRDV.getText().isEmpty() || txtEAPP.getText().isEmpty() || txtCPAR.getText().isEmpty() || 
+		                txtPE.getText().isEmpty()) {
+		                lblGWA.setText("Please ensure you have filled every box.");
+		            } else {
+		                try {
+		                    double comprog = Double.parseDouble(txtCMPRG.getText());
+		                    double workimmersion = Double.parseDouble(txtWI.getText());
+		                    double iii = Double.parseDouble(txtIII.getText());
+		                    double perdev = Double.parseDouble(txtPRDV.getText());
+		                    double eapp = Double.parseDouble(txtEAPP.getText());
+		                    double cpar = Double.parseDouble(txtCPAR.getText());
+		                    double pe = Double.parseDouble(txtPE.getText());
+
+		                    /*
+		                     * This watermark should not be removed.
+		                     * TODO, made by olici3rrv
+		                     */
+		                    if (comprog < 70 || comprog > 100 || workimmersion < 70 || workimmersion > 100 || 
+		                        iii < 70 || iii > 100 || perdev < 70 || perdev > 100 || 
+		                        eapp < 70 || eapp > 100 || cpar < 70 || cpar > 100 || 
+		                        pe < 70 || pe > 100) {
+		                        lblGWA.setText("All values must be between 70 and 100.");
+		                    } else {
+		                    	String honor;
+		                        double ave = (comprog + workimmersion + iii + perdev + eapp + cpar + pe) / 7;
+		                        if (ave >= 98) {
+									honor = "You passed with Highest Honors!";
+								} else if (ave >= 95) {
+									honor = "You passed with High Honors!";									
+								} else if (ave >= 90) {
+									honor = "You passed with Honors!";									
+								} else if (ave >= 75) {
+									honor = "You passed!";									
+								} else {
+									honor = "You failed.";									
+								}
+		                        DecimalFormat df = new DecimalFormat("#.##");
+		                        lblGWA.setText("Your average is: " + df.format(ave));
+		                        lblGWA_1.setText(honor);
+		                        watermark.setText(null);
+		                    }
+		                    /*
+		                     * This watermark should not be removed.
+		                     * TODO, made by olici3rrv
+		                     */
+		                } catch (NumberFormatException ex) {
+		                    lblGWA.setText("Please enter valid numbers in all fields.");
+		                }
+		            }
+		        }
+		    }
+		});
+		btnGenerate.setFont(new Font("Cantarell", Font.BOLD, 16));
+		btnGenerate.setBounds(65, 423, 120, 40);
+		contentPane.add(btnGenerate);
+		
+		JButton btnCLR = new JButton("Clear");
+		btnCLR.setForeground(new Color(255, 255, 255));
+		btnCLR.setBackground(new Color(36, 36, 36));
+		btnCLR.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+		        if (btnGenerate.getText().equals("Generate")) {
+		            lblGWA.setText("Click Clear again to confirm.");
+                    watermark.setText(null);
+		            btnGenerate.setText("Cancel");
+		        } else {//2nd click to confirm
+                    /*
+                     * This watermark should not be removed.
+                     * TODO, made by olici3rrv
+                     */
+		            txtCMPRG.setText("");
+		            txtIII.setText("");
+		            txtWI.setText("");
+		            txtPRDV.setText("");
+		            txtEAPP.setText("");
+		            txtCPAR.setText("");
+		            txtPE.setText("");
+		            lblGWA.setText("");
+		            lblGWA_1.setText(null);
+		            btnGenerate.setText("Generate");
+		            watermark.setText(ao.ao);
+                    /*
+                     * This watermark should not be removed.
+                     * TODO, made by olici3rrv
+                     */
+		        }
+		    }
+		});
+		btnCLR.setFont(new Font("Cantarell", Font.BOLD, 16));
+		btnCLR.setBounds(208, 423, 120, 40);
+		contentPane.add(btnCLR);
+	}
+}

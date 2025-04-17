@@ -1,0 +1,117 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Label;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+
+public class MainMenu extends JFrame {
+	
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JButton btnClear;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainMenu frame = new MainMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainMenu() {
+		setBackground(new Color(36, 36, 36));
+		setTitle("Welcome");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 350);
+		contentPane = new JPanel();
+		contentPane.setForeground(new Color(51, 51, 51));
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblUsername.setForeground(new Color(255, 255, 255));
+		lblUsername.setBounds(73, 42, 111, 19);
+		contentPane.add(lblUsername);
+		
+		btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnClear.setForeground(Color.WHITE);
+		btnClear.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnClear.setBackground(new Color(36, 36, 36));
+		btnClear.setBounds(182, 269, 93, 37);
+		contentPane.add(btnClear);
+		
+		JButton btnEnterInfo = new JButton("<html><center>Enter your<br>info</center></html>");
+		btnEnterInfo.setForeground(new Color(36, 36, 36));
+		btnEnterInfo.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnEnterInfo.setBackground(new Color(36, 36, 36));
+		btnEnterInfo.setBounds(73, 73, 125, 55);
+		contentPane.add(btnEnterInfo);
+		
+		JButton btngradesys = new JButton("<html><center>Grading<br>System</center></html>");
+		btngradesys.setForeground(Color.WHITE);
+		btngradesys.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btngradesys.setBackground(new Color(36, 36, 36));
+		btngradesys.setBounds(73, 171, 125, 55);
+		contentPane.add(btngradesys);
+		
+		JButton btnlegalAgechecker = new JButton("<html><center>Legal Age<br>Checker</center></html>");
+		btnlegalAgechecker.setForeground(new Color(36, 36, 36));
+		btnlegalAgechecker.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnlegalAgechecker.setBackground(new Color(36, 36, 36));
+		btnlegalAgechecker.setBounds(257, 73, 125, 55);
+		contentPane.add(btnlegalAgechecker);
+		
+		JButton btnTempCon = new JButton("<html><center>Temperature<br>Converter</center></html>");
+		btnTempCon.setForeground(Color.WHITE);
+		btnTempCon.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnTempCon.setBackground(new Color(36, 36, 36));
+		btnTempCon.setBounds(257, 171, 125, 55);
+		contentPane.add(btnTempCon);
+		
+		JLabel lblUsername_1 = new JLabel("Username");
+		lblUsername_1.setForeground(Color.WHITE);
+		lblUsername_1.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblUsername_1.setBounds(73, 140, 111, 19);
+		contentPane.add(lblUsername_1);
+		
+		JLabel lblUsername_2 = new JLabel("Username");
+		lblUsername_2.setForeground(Color.WHITE);
+		lblUsername_2.setFont(new Font("Cantarell", Font.PLAIN, 16));
+		lblUsername_2.setBounds(173, 238, 111, 19);
+		contentPane.add(lblUsername_2);
+		
+	}
+}
