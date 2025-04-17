@@ -16,6 +16,9 @@ To all who made this possible...
   To **Cleo**, thank you for giving me new ideas and for helping me with code,
   I also enjoyed our discord vcs and talks during programming, I will miss you lots.
 
+  To **Angelo**, thank you for letting us use your laptop during research,
+  di mo na need mangopya o manghingi, eto na lahat HAHAHAHA.
+
   To **Mr. Roderick F. Ferros**, thank you for taking time to teach us valuable knowledge,
   whether in life, programming, and our futures. Thank you for being our guide and second parent 
   for these past 2 years. 
