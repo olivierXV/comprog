@@ -1,35 +1,41 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Schoop - Testing</title>
-  <link rel="stylesheet" href="css/ao.css">
-
-  <link rel="icon" href="/favicon.ico">
+  <title>Home</title>
+  <link rel="stylesheet" href="ao.css">
+  <link rel="stylesheet" href="hover.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="icon" href="school.png">  <script src="backend/dashfetch.js" defer></script>
+  <script src="js/calendar.js" defer></script>
+  <script src="backend/check.js" defer></script>
+  <script src="backend/info.js" defer></script>
+  <script src="menu.js" defer></script>
+  <script src="backend/logout.js" defer></script>
 </head>
-
 <body>
   <div id="fb-root"></div>
   <div class="errir"><p>Screen Size is too small</p></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0"></script>  <div class="navbar">
+  <div class="navbar">
     <ul>
-      <div>
-        <li><a><img src="school.png"></a></li>
+      <div style="display: flex;">
+        <li><a href="about.html"><img src="school.png"></a></li>
         <li class="title"><a>SCHOOP</a></li>
       </div>
       <div class="link" style="float: right;">
         <div class="dropdown">
-          <button class="dropbut">≡</button>
-          <div class="dropdown-content">
-            <a>Grades</a>
-            <a>Activities</a>
-            <a>Schedule</a>
-            <a>School Calendar</a>
+          <button class="dropbut" href="javascript:void(0);" class="icon" onclick="menu()">≡</button>
+          <div id="dropdown-content">
+            <a href="dashboard.php" id="dash">Dashboard</a>
+            <a href="#" id="logoutdrop">Log out</a>
           </div>
         </div>
-        <li><a><img src="icon.png"></a></li>
+        <div class="deskLink">
+          <li><a style="float: right; font-size: large; color: white;" class="active" href="index.html" >Home</a></li>
+          <li><a style="float: right; font-size: large; color: white;" href="dashboard.php" >Dashboard</a></li>
+          <li><a style="float: right; font-size: large; color: white;" href="#" id="logoutLink" >Log out</a></li>
+        </div>
       </div>
     </ul>
   </div>
@@ -37,21 +43,42 @@
     <div class="left">
       <div class="box">
         <ul>
-          <li><a>Grades</a></li>
-          <li><a>Activities</a></li>
-          <li><a>Schedule</a></li>
-          <li><a>School Calendar</a></li>
+          <ul>
+            <li><a id="full-name"> </a></li>
+            <li><a id="lrn"> </a></li>
+            <li><a id="full-section"> </a></li>
+            <hr style="color: #000000; background-color: #000000; height: 1px; width:100%;">
+            <li><a id="announcements"> </a></li>
+            <a href="edit/announcements.php" style="margin-top: 20px;" id="adminOnly"><button>Edit Announcements</button></a>
+          </ul>    
         </ul>
       </div>
     </div>
     <div class="right">
       <div class="box">
-        <div class="fb-page" data-href="https://www.facebook.com/&#064;DepEdTayoSHSSN342600" data-tabs="timeline" data-width="500" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/&#064;DepEdTayoSHSSN342600" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/&#064;DepEdTayoSHSSN342600">DepEd Tayo SHS in San Nicholas III, Bacoor City - Bacoor City</a></blockquote></div>
+        <div class="fb">
+          <div class="calendar">
+              <div class="header">
+                  <button id="prevMonth">❮</button>
+                  <h2 id="monthYear"></h2>
+                  <button id="nextMonth">❯</button>
+              </div>
+              <div class="weekdays">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+              </div>
+              <div class="days" id="calendarDays"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
 </body>
 
 </html>
-<!--olicierrv, quipp3r-->
+<!--olicierrv, quippay-->

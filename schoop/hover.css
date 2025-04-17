@@ -1,0 +1,99 @@
+.navbar .link li a:hover {
+  transition: ease-in-out 0.2s;
+  background-color: #00000033;
+  border-radius: 10px;
+}
+
+.navbar .link li a.active {
+  transition: ease-in-out 0.2s;
+  background-color: #00000033;
+  border-radius: 10px;
+}
+
+.right li a:hover {
+  transition: ease-in-out 0.2s;
+  background-color: #ddd;
+}
+
+#adminOnly, #teachersOnly, #edit{
+  display: none !important;
+}
+
+body.admin #adminOnly, body.admin #edit, body.teacher #edit{
+  display: block !important;
+}
+
+body.teacher #teachersOnly, body.admin #teachersOnly{
+  display: block !important;
+}
+
+#adminControls{
+  display: none;
+}
+
+body.admin #adminControls{
+  display: inline;
+}
+
+@media screen and (max-width: 768px){
+  .navbar .dropdown {
+    position: relative;
+    float: right; /* Align dropdown to the right */
+    margin-right: 15px; /* Add some margin for spacing */
+  }
+
+  .dropdown {
+    position: relative; /* Needed for absolute positioning of dropdown content */
+    display: inline-block;
+  }
+
+  .dropbut {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    font-size: xx-large;
+    padding: 10px 20px;
+    width: 120px; /* Ensures dropdown content matches button width */
+  }
+
+  #dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positions dropdown directly below the button */
+    left: 0; /* Aligns dropdown to button */
+    width: 100%; /* Ensures it matches button width */
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    z-index: 100;
+  }
+
+  #dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  #dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropbut {
+    background-color: #ccc;
+  }
+
+  .deskLink{
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px){
+  .dropdown {
+    display: none;
+  }
+}
