@@ -1,6 +1,5 @@
 This is the final version of our program for our research titled
-**"SCHOOP: Development of a School E-Portal in SHS in San Nicolas III, Bacoor City."
-**
+**"SCHOOP: Development of a School E-Portal in SHS in San Nicolas III, Bacoor City."**
 
 **Note:**
 This will only work properly on localhost with XAMPP with the school (1).sql installed, the credentials to be used are:
@@ -32,7 +31,6 @@ This will only work properly on localhost with XAMPP with the school (1).sql ins
   - burgos
 
 **To all that made this research possible, thank you very very much.**
-**SCHOOP**
 - **Student Researchers**
   - Adrian Oliver V. Hernandez (Research Leader)
   - Venedict Floyd S. Quimay (Assistant Leader)
