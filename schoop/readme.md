@@ -33,10 +33,10 @@ This will only work properly on localhost with XAMPP with the school (1).sql ins
 
 **To all that made this research possible, thank you very very much.**
 **SCHOOP**
-**Student Researchers**
-- Adrian Oliver V. Hernandez (Research Leader)
-- Venedict Floyd S. Quimay (Assistant Leader)
-- Mark Zyrus A. Burgos
-- Kleinwise M. Florenciano
-**Research Adviser**
-- Mr. Roderick F. Ferros
+- **Student Researchers**
+  - Adrian Oliver V. Hernandez (Research Leader)
+  - Venedict Floyd S. Quimay (Assistant Leader)
+  - Mark Zyrus A. Burgos
+  - Kleinwise M. Florenciano
+- **Research Adviser**
+  - Mr. Roderick F. Ferros
