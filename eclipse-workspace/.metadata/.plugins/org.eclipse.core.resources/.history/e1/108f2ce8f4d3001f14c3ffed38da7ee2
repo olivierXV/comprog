@@ -1,0 +1,84 @@
+package bueno;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class main extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					main frame = new main();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public main() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblFirstName = new JLabel("First Name:");
+		lblFirstName.setBounds(12, 35, 73, 17);
+		contentPane.add(lblFirstName);
+		
+		JButton btnClear = new JButton("Clear");
+		btnClear.setBounds(213, 224, 101, 27);
+		contentPane.add(btnClear);
+		
+		JButton btnGenerate = new JButton("Generate");
+		btnGenerate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnGenerate.setBounds(54, 224, 101, 27);
+		contentPane.add(btnGenerate);
+		
+		textField = new JTextField();
+		textField.setBounds(106, 33, 147, 21);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblage = new JLabel("Age:");
+		lblage.setBounds(24, 69, 39, 17);
+		contentPane.add(lblage);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(106, 67, 147, 21);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblPrint = new JLabel("");
+		lblPrint.setBounds(41, 128, 212, 46);
+		contentPane.add(lblPrint);
+	}
+}

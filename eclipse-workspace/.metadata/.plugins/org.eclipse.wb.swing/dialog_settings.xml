@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.font.FontDialog">
+		<item key="x" value="439"/>
+		<item key="y" value="102"/>
+		<item key="width" value="487"/>
+		<item key="height" value="559"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.laf.ui.AddCustomLookAndFeelDialog">
+		<item key="x" value="328"/>
+		<item key="y" value="155"/>
+		<item key="width" value="710"/>
+		<item key="height" value="452"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.border.BorderDialog">
+		<item key="x" value="413"/>
+		<item key="y" value="123"/>
+		<item key="width" value="539"/>
+		<item key="height" value="517"/>
+	</section>
+	<section name="org.eclipse.wb.internal.swing.model.property.editor.models.combo.ComboBoxModelDialog">
+		<item key="x" value="413"/>
+		<item key="y" value="188"/>
+		<item key="width" value="539"/>
+		<item key="height" value="387"/>
+	</section>
+</section>

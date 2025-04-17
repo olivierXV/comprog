@@ -1,0 +1,131 @@
+package olicierrv;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.Label;
+import javax.swing.JPasswordField;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+
+public class MainMenu extends JFrame {
+	
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JButton btnLogout;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainMenu frame = new MainMenu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainMenu() {
+		setUndecorated(true);
+		setBackground(new Color(36, 36, 36));
+		setTitle("Welcome");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 325);
+		contentPane = new JPanel();
+		contentPane.setForeground(new Color(51, 51, 51));
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		btnLogout = new JButton("Exit");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int exit = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit?", "Exit", JOptionPane.YES_NO_OPTION);
+				if (exit == JOptionPane.YES_OPTION) {
+					dispose();
+					JOptionPane.showMessageDialog(null, ao.aoa);
+				}
+			}
+		});
+		btnLogout.setForeground(Color.WHITE);
+		btnLogout.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnLogout.setBackground(new Color(36, 36, 36));
+		btnLogout.setBounds(180, 238, 100, 37);
+		contentPane.add(btnLogout);
+		
+		JButton btnEnterInfo = new JButton("<html><center>Enter your<br>info</center></html>");
+		btnEnterInfo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Test.main(null);
+			}
+		});
+		btnEnterInfo.setForeground(new Color(255, 255, 255));
+		btnEnterInfo.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnEnterInfo.setBackground(new Color(36, 36, 36));
+		btnEnterInfo.setBounds(48, 42, 150, 55);
+		contentPane.add(btnEnterInfo);
+		
+		JButton btngradesys = new JButton("<html><center>Grading<br>System</center></html>");
+		btngradesys.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				GradingSystem.main(null);
+			}
+		});
+		btngradesys.setForeground(Color.WHITE);
+		btngradesys.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btngradesys.setBackground(new Color(36, 36, 36));
+		btngradesys.setBounds(48, 140, 150, 55);
+		contentPane.add(btngradesys);
+		
+		JButton btnlegalAgechecker = new JButton("<html><center>Legal Age<br>Checker</center></html>");
+		btnlegalAgechecker.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				LegalAgeChecker.main(null);
+			}
+		});
+		btnlegalAgechecker.setForeground(new Color(255, 255, 255));
+		btnlegalAgechecker.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnlegalAgechecker.setBackground(new Color(36, 36, 36));
+		btnlegalAgechecker.setBounds(257, 42, 150, 55);
+		contentPane.add(btnlegalAgechecker);
+		
+		JButton btnTempCon = new JButton("<html><center>Temperature<br>Converter</center></html>");
+		btnTempCon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				fah2cel.main(null);
+			}
+		});
+		btnTempCon.setForeground(Color.WHITE);
+		btnTempCon.setFont(new Font("Cantarell", Font.PLAIN, 18));
+		btnTempCon.setBackground(new Color(36, 36, 36));
+		btnTempCon.setBounds(257, 140, 150, 55);
+		contentPane.add(btnTempCon);
+		
+	}
+}

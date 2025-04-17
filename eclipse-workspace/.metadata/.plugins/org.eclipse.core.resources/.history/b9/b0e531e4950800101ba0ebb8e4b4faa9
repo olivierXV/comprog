@@ -1,0 +1,171 @@
+package olicierrv;
+
+import java.sql.*;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Register extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	private JPasswordField passagainField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Register frame = new Register();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 * @throws ClassNotFoundException 
+	 * @throws SQLException 
+	 */
+	public Register() throws ClassNotFoundException, SQLException {
+		setBackground(new Color(54, 54, 54));
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "xarpeius");
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 440);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(36, 36, 36));
+		contentPane.setBorder(null);
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Username");
+		lblNewLabel.setFont(new Font("Cantarell", Font.PLAIN, 15));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(100, 33, 112, 20);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setFont(new Font("Cantarell", Font.PLAIN, 15));
+		lblPassword.setForeground(new Color(255, 255, 255));
+		lblPassword.setBounds(100, 112, 112, 20);
+		contentPane.add(lblPassword);
+		
+		textField = new JTextField();
+		textField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				passwordField.requestFocusInWindow();
+			}
+		});
+		textField.setForeground(new Color(255, 255, 255));
+		textField.setBackground(new Color(54, 54, 54));
+		textField.setBounds(100, 65, 255, 35);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnReg = new JButton("Register");
+		btnReg.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					if (!passwordField.getText().equals(passagainField.getText())) {
+						Statement s = con.createStatement();
+						String query = "INSERT INTO login(username, password) VALUES ('" 
+					             + textField.getText() + "', '" 
+					             + passwordField.getText() + "');";
+						//select * from login.login where username = '"+textField.getText()+"' and password = '"+passwordField.getText()+"'
+						int rowsAffected = s.executeUpdate(query);
+						if (rowsAffected > 0) {
+						    JOptionPane.showMessageDialog(null, "Registration successful");
+						} else {
+						    JOptionPane.showMessageDialog(null, "Registration failed. Please try again.");
+						}
+					} else {
+						JOptionPane.showMessageDialog(null, "Passwords do not match");
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnReg.setBackground(new Color(54, 54, 54));
+		btnReg.setForeground(new Color(255, 255, 255));
+		btnReg.setFont(new Font("Cantarell", Font.PLAIN, 15));
+		btnReg.setBounds(115, 280, 101, 30);
+		contentPane.add(btnReg);
+		
+		passwordField = new JPasswordField();
+		passwordField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnReg.doClick();
+			}
+		});
+		passwordField.setForeground(new Color(255, 255, 255));
+		passwordField.setBackground(new Color(54, 54, 54));
+		passwordField.setColumns(10);
+		passwordField.setBounds(100, 144, 255, 35);
+		contentPane.add(passwordField);
+		
+		JButton btnClear = new JButton("Clear");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText(null);
+				passwordField.setText(null);
+			}
+		});
+		btnClear.setForeground(Color.WHITE);
+		btnClear.setFont(new Font("Cantarell", Font.PLAIN, 15));
+		btnClear.setBackground(new Color(54, 54, 54));
+		btnClear.setBounds(235, 281, 101, 30);
+		contentPane.add(btnClear);
+		
+		JLabel lblRetypePassword = new JLabel("Re-type Password");
+		lblRetypePassword.setForeground(Color.WHITE);
+		lblRetypePassword.setFont(new Font("Cantarell", Font.PLAIN, 15));
+		lblRetypePassword.setBounds(100, 191, 164, 20);
+		contentPane.add(lblRetypePassword);
+		
+		passagainField = new JPasswordField();
+		passagainField.setForeground(Color.WHITE);
+		passagainField.setColumns(10);
+		passagainField.setBackground(new Color(54, 54, 54));
+		passagainField.setBounds(100, 223, 255, 35);
+		contentPane.add(passagainField);
+		
+		JButton btnBackToLog = new JButton("Back to Log in");
+		btnBackToLog.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				LoginUI.main(null);
+			}
+		});
+		btnBackToLog.setForeground(Color.WHITE);
+		btnBackToLog.setFont(new Font("Cantarell", Font.PLAIN, 15));
+		btnBackToLog.setBackground(new Color(54, 54, 54));
+		btnBackToLog.setBounds(115, 330, 221, 30);
+		contentPane.add(btnBackToLog);
+	}
+}
