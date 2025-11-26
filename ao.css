@@ -1,5 +1,8 @@
 html,body {
-    background-image: url(hamalan.jpg);
+  background-color: #000;
+
+  background-image:  /* gradient overlay */
+    url('binon.jpg'); /* background image */
     background-position: center;
     background-attachment: fixed; 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -19,31 +22,32 @@ html,body {
   border: 3px solid rgba(0, 0, 0, 0.17);
 
   background-image: 
-    linear-gradient(to top left, #1111117f, #5555556f); /*inner*/
+    linear-gradient(to bottom, #5555556f, #1111117f, #5555556f); /*inner*/
     text-shadow: #000000ba 0px 0px 15px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   box-shadow: 0px 0px 5px 2px #00000050;
   height: 6.3vh;
 }
-#navbar a#links{
+#navbar a#links, #navbar a#main{
     color: #ffffff;
     text-decoration: none;
     padding: 10px;
     text-align: center;
     transition: 0.3s ease-in-out;
-    font-size: 112%;
+    font-size: 100%;
     font-weight: 475;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
 }
 #navbar a#links:hover.glow-hover{
     background-color: #ffffff10;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 3px #0000001a;
-}
-#logo {
-  height: 100%;       /* fills navbar height */
-  width: auto;        /* maintains aspect ratio */
-  object-fit: contain; /* ensures it scales nicely */
-  align-self: center;
+    transition: 0.3s ease-in-out;
 }
 .box{
     font-size: 150%;
@@ -52,28 +56,24 @@ html,body {
     justify-content: center;
     margin: 0;
     padding: 0;
-}
-
-.boxin{
-  /*width: 100%;
-  height: 79wh;*/
   border-radius: 14px;
   border: 3px solid rgba(0, 0, 0, 0.17);
-
+  margin-top: 1.45vh; 
   background-image: 
-    linear-gradient(to top left, #1111117f, #5555556f); /*inner*/
+    linear-gradient(to bottom, #5555556f, #1111117f, #5555556f); /*inner*/
     text-shadow: #000000ba 0px 0px 15px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   box-shadow: 0px 0px 5px 2px #00000050;
   padding: 30px; 
   line-height: 1;
   position: relative;
-  transition: ease-in-out 0.3s;
-  box-shadow: 0px 0px 10px 5px #00000076;
-  margin-top: 1.45vh; 
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+
+#logo{
+  align-self: center;
 }
 
 .glow-hover {
@@ -81,8 +81,36 @@ html,body {
 }
 
 .glow-hover:hover {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
+  text-shadow: 0 0 8px rgba(85, 78, 78, 0.8),
                0 0 12px rgba(255, 255, 255, 0.6),
                0 0 16px rgba(255, 255, 255, 0.4);
 }
 
+@media screen and (min-width: 769px) {
+#logo {
+  height: 100%;       /* fills navbar height */
+  width: auto;        /* maintains aspect ratio */
+  object-fit: contain; /* ensures it scales nicely */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .boxin {
+    font-size: 100%;
+  }
+  #navbar a#links.glow-hover {
+    display: none;
+  }
+  #navbar a#main.title{
+    font-size: 125%;
+    text-align: center;
+    padding: 0;
+  }
+  #navbar{
+    justify-content: space-between;
+    height: auto;
+  }
+  #logo {
+    width: auto;
+  }
+}
