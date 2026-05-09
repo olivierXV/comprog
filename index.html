@@ -8,25 +8,49 @@
     </head>
     <body>
         <div id="navbar">
-            <img src="xarpei.png" alt="Logo" id="logo" style="max-height: 6vh; align-items: center;">
+            <img src="xarpei.png" alt="Logo" id="logo" style="max-height: 5vh; align-items: center; padding: 0.5%;">
             <a id="main" class="title glow-hover" href="https://ngl.link/olicierrv">Adrian Oliver.</a>
-            <a href="https://open.spotify.com/playlist/3ytHRSOXlYsaT0ZWZpGRwE?si=221ae81791cb48b4" class="glow-hover" id="links">Ongpin</a>
-            <a href="https://open.spotify.com/playlist/1MGxKiNglc2JN9XUdXydSW?si=a6eb704373694019" class="glow-hover" id="links">Fort Santiago</a>
-            <a href="https://open.spotify.com/playlist/3Yrvm5IctJA1ZvzwY9bbVQ?si=9fa427d7ea7c47c7" class="glow-hover" id="links">Muralla</a>
-            <a href="https://www.instagram.com/adriin.o/" class="glow-hover" id="links">Luneta</a>
+            <a href="comprog.html" class="glow-hover" id="links">Comprog</a>
+            <a href="#" class="glow-hover" id="links">Work in Progress, please bear with me.</a>
             <a href="indexG12.html" class="glow-hover" id="links">San Nicolas</a>
-            <a href="index.html" id="main" class="glow-hover"></a>
         </div>
         <div class="content">
             <div class="box">
                 <div class="boxin">
-                    <h1 class="glow-hover">A new era awaits!</h1>
-                    <p class="glow-hover">This website is currently a work in progress.</p>
-                    <p class="glow-hover"><i>- adrin.</i></p>
-                    <p class="glow-hover" style="font-size: small;"><i>The antonym of progress is congress.</i></p>
+                    <div id="left-side">
+                        <center><img src="adrin.webp" alt="Adrin" id="adrin-img">
+                        <h2>Adrian Oliver V. Hernandez</h2></center>
+                        <ul>
+                            <div style="margin-top: -2%; line-height: 2; font-size: medium;">
+                                    <a id="link" class="contact" href="mailto:olicierr@tuta.io?subject=Inquiry (from your webpage)&body=Greetings!%0D%0AI have a question regarding..."><li>olicierr@tuta.io</li></a>
+                                    <a id="link" class="contact" href="https://discord.com/users/olicierr"><li>Discord</li></a>
+                            </div>
+                        </ul>
+                    </div>
+                    <div id="right-side">
+                        <h1>About me</h1>
+                        <p>Tempus fugit, ergo diem carpe! (Time Flies, Therefore Seize the Day!)</p>
+                        <p>
+                            I am Adrian, a person with love for technology and innovation in the name of progress.<br>
+                            Currently pursuing a degree in Information Technology in the Polytechnic University of the Philippines, I am dedicating myself to sharpen my skills in the field of IT in this ever evolving world.
+                            With a strong foundation in programming and networking, I am eager to explore the vast landscape of technology in the modern world.
+                        </p>
+                        <p>
+                            Peers have described me as sentimental, empathetic, and a bit of a perfectionist. I am a person who values deep connections and meaningful experiences.
+                            I am willing to help others and I am always open to collaborate on new ideas and projects. I mostly seek to make visually appealing projects, while still prioritizing functionality and efficiency (sometimes forgetting naming convetions).
+                        </p>
+                        <p>
+                            In my free time, I enjoy listening to music, playing computer games, and reading the daily news. I have practical knowledge of Java, HTML, CSS, MySQL/MariaDB, basics of Python and Javascript, and currently learning C and C++.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div><div id="bg-fix"></div>
+        <script>
+            document.getElementById('logo').addEventListener('click', () => {
+                document.getElementById('navbar').classList.toggle('open');
+            });
+        </script>
     </body>
 
 </html>
